@@ -24,10 +24,10 @@ O FitManager é um sistema de gerenciamento de academia desenvolvido em Java. O 
 
 ## Integrantes
 
-- Pessoa 1: Leandro Feitosa de Sousa
-- Pessoa 2: José Arteiro Feitosa Noronha Neto
-- Pessoa 3: Bruna de Oliveira Santos
-- Pessoa 4: Geovani de Araújo Alves
+- Colaborador 1: Leandro Feitosa de Sousa
+- Colaborador 2: José Arteiro Feitosa Noronha Neto
+- Colaborador 3: Bruna de Oliveira Santos
+- Colaborador 4: Geovani de Araújo Alves
 
 ## Documentação
 
