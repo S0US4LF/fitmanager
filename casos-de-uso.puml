@@ -1,0 +1,44 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam usecase {
+  BackgroundColor White
+  BorderColor #333333
+}
+skinparam actor {
+  BorderColor #333333
+}
+title Sistema de Gerenciamento de Academia
+
+actor Administrador as Admin
+actor Instrutor as Instr
+
+rectangle "Sistema de Gerenciamento de Academia" {
+  usecase "Autenticar-se" as UC0
+  usecase "Gerenciar alunos" as UC1
+  usecase "Gerenciar instrutores" as UC2
+  usecase "Gerenciar planos de mensalidade" as UC3
+  usecase "Controlar pagamentos" as UC4
+  usecase "Consultar vencimentos" as UC5
+  usecase "Registrar frequência" as UC6
+  usecase "Montar treinos" as UC7
+  usecase "Acompanhar treinos" as UC8
+  usecase "Consultar alunos" as UC9
+}
+
+Admin --> UC0
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+
+Instr --> UC0
+Instr --> UC6
+Instr --> UC7
+Instr --> UC8
+Instr --> UC9
+
+UC4 ..> UC5 : <<include>>
+@enduml
