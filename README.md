@@ -32,6 +32,8 @@ Desenvolver uma aplicação que auxilie na organização e no controle das ativi
 |---|---|
 | Java 21 | Linguagem de programação |
 | JavaFX | Desenvolvimento da interface gráfica |
+| FXML | Estruturação das telas |
+| CSS | Estilização da interface gráfica |
 | Maven | Gerenciamento do projeto e dependências |
 | SQLite | Banco de dados |
 | JDBC | Comunicação entre a aplicação e o banco de dados |
@@ -74,7 +76,8 @@ fitmanager/
 │   │   ├── casos-de-uso-fitmanager.puml
 │   │   └── casos-de-uso.png
 │   ├── casos-de-uso.md
-│   └── historias-de-usuario.md
+│   ├── historias-de-usuario.md
+│   └── glossario.md
 ├── src/
 │   ├── main/
 │   │   └── java/
@@ -94,10 +97,11 @@ O diagrama apresenta os atores e as principais funcionalidades previstas para o 
 
 ![Diagrama de casos de uso](docs/diagramas/casos-de-uso.png)
 
-**Documentos relacionados:**
+### Documentos relacionados
 
 - [Casos de uso](docs/casos-de-uso.md)
 - [Histórias de usuário](docs/historias-de-usuario.md)
+- [Glossário](docs/glossario.md)
 - [Código-fonte do diagrama (PlantUML)](docs/diagramas/casos-de-uso-fitmanager.puml)
 
 ## Integrantes
@@ -109,8 +113,10 @@ O diagrama apresenta os atores e as principais funcionalidades previstas para o 
 
 ## Instituição
 
-**Instituto Federal do Piauí (IFPI)**  
-Campus Picos  
+**Instituto Federal do Piauí (IFPI)**
+
+Campus Picos
+
 Curso: Análise e Desenvolvimento de Sistemas
 
 ---
