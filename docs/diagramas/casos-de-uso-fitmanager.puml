@@ -1,0 +1,94 @@
+
+@startuml
+left to right direction
+
+title FitManager - Diagrama de Casos de Uso
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam actorStyle awesome
+
+skinparam usecase {
+    BackgroundColor #F7FAFC
+    BorderColor #34495E
+    ArrowColor #52616B
+}
+
+skinparam actor {
+    BorderColor #263238
+    FontColor #17202A
+}
+
+actor "Administrador" as Admin
+actor "Atendente" as Atendente
+actor "Instrutor" as Instrutor
+actor "Aluno" as Aluno
+
+rectangle "FitManager\nSistema de Gerenciamento de Academia" {
+
+    package "Acesso" {
+        usecase "UC01\nAutenticar usuário" as UC01
+    }
+
+    package "Gestão de alunos e matrículas" {
+        usecase "UC02\nCadastrar aluno" as UC02
+        usecase "UC03\nConsultar aluno" as UC03
+        usecase "UC05\nRealizar matrícula" as UC05
+        usecase "UC06\nRenovar matrícula" as UC06
+        usecase "UC15\nCancelar matrícula" as UC15
+    }
+
+    package "Planos e financeiro" {
+        usecase "UC04\nCadastrar plano" as UC04
+        usecase "UC07\nRegistrar pagamento" as UC07
+        usecase "UC14\nGerar relatório de inadimplência" as UC14
+    }
+
+    package "Frequência e atividades" {
+        usecase "UC08\nConsultar validade do plano" as UC08
+        usecase "UC09\nRegistrar entrada do aluno" as UC09
+        usecase "UC11\nElaborar treino" as UC11
+        usecase "UC12\nConsultar treino" as UC12
+        usecase "UC13\nRegistrar avaliação física" as UC13
+    }
+
+    package "Equipe" {
+        usecase "UC10\nCadastrar instrutor" as UC10
+    }
+}
+
+' Administrador
+Admin --> UC01
+Admin --> UC04
+Admin --> UC10
+Admin --> UC14
+
+' Atendente
+Atendente --> UC01
+Atendente --> UC02
+Atendente --> UC03
+Atendente --> UC05
+Atendente --> UC06
+Atendente --> UC07
+Atendente --> UC09
+Atendente --> UC15
+
+' Instrutor
+Instrutor --> UC01
+Instrutor --> UC11
+Instrutor --> UC13
+
+' Aluno
+Aluno --> UC01
+Aluno --> UC08
+Aluno --> UC12
+
+note bottom
+  Todos os perfis precisam estar autenticados
+  para acessar as funcionalidades autorizadas.
+  As permissões seguem a documentação dos casos de uso.
+end note
+
+@enduml
