@@ -20,15 +20,30 @@ O FitManager é um sistema de gerenciamento de academia desenvolvido em Java. O 
 2. Abra o terminal na pasta do projeto.
 3. Execute o comando:
 
-   `mvn javafx:run`
+```bash
+mvn javafx:run
+```
 
 ## Integrantes
 
-- Colaborador 1: Leandro Feitosa de Sousa
-- Colaborador 2: José Arteiro Feitosa Noronha Neto
-- Colaborador 3: Bruna de Oliveira Santos
-- Colaborador 4: Geovani de Araújo Alves
+- Leandro Feitosa de Sousa
+- José Arteiro Feitosa Noronha Neto
+- Bruna de Oliveira Santos
+- Geovani de Araújo Alves
 
 ## Documentação
 
-Os documentos e diagramas do projeto serão armazenados na pasta `docs/`.
+A documentação do projeto está organizada na pasta `docs/`.
+
+### Diagrama de casos de uso
+
+O diagrama apresenta os atores e as funcionalidades do sistema FitManager.
+
+![Diagrama de casos de uso](docs/diagramas/casos-de-uso.png)
+
+- [Visualizar código-fonte PlantUML](docs/diagramas/casos-de-uso-fitmanager.puml)
+
+### Outros documentos
+
+- [Casos de uso](docs/casos-de-uso.md)
+- [Histórias de usuário](docs/historias-de-usuario.md)
