@@ -1,0 +1,301 @@
+
+/* ================================= */
+/* FITMANAGER - TEMA CLARO           */
+/* Grafite, amarelo e branco         */
+/* ================================= */
+
+.login-root {
+    -fx-background-color: #F3F4F6;
+    -fx-font-family: "Arial";
+}
+
+.login-brand {
+    -fx-background-color: #1B1D1F;
+    -fx-padding: 40px;
+}
+
+.brand-title {
+    -fx-text-fill: #F5C542;
+    -fx-font-size: 34px;
+    -fx-font-weight: bold;
+}
+
+.brand-message {
+    -fx-text-fill: #F5F5F5;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+}
+
+.brand-description {
+    -fx-text-fill: #B8BEC5;
+    -fx-font-size: 14px;
+    -fx-text-alignment: center;
+}
+
+.login-form {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 50px;
+}
+
+.form-title {
+    -fx-text-fill: #202326;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.form-subtitle {
+    -fx-text-fill: #737B84;
+    -fx-font-size: 14px;
+}
+
+.field-label {
+    -fx-text-fill: #33383D;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.login-input {
+    -fx-background-color: #F8F9FA;
+    -fx-text-fill: #202326;
+    -fx-prompt-text-fill: #8B929A;
+    -fx-border-color: #D9DDE1;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+.login-input:focused {
+    -fx-border-color: #D4A91F;
+}
+
+.login-button {
+    -fx-background-color: #F5C542;
+    -fx-text-fill: #151719;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 7px;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #E5B52E;
+}
+
+.theme-button {
+    -fx-background-color: #ECEFF1;
+    -fx-text-fill: #25292D;
+    -fx-border-color: #D5D9DD;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-padding: 9px 14px;
+    -fx-cursor: hand;
+}
+
+.theme-button:hover {
+    -fx-background-color: #DDE1E5;
+}
+
+/* Botão de mostrar e ocultar senha */
+
+.password-toggle-button {
+    -fx-background-color: #F8F9FA;
+    -fx-text-fill: #555B62;
+    -fx-border-color: #D9DDE1;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-min-width: 48px;
+    -fx-min-height: 50px;
+}
+
+.password-toggle-button:hover {
+    -fx-background-color: #ECEFF1;
+    -fx-text-fill: #202326;
+}
+
+.footer-text {
+    -fx-text-fill: #969DA5;
+    -fx-font-size: 12px;
+}
+
+/* ================================= */
+/* TELA DE GERENCIAMENTO DE ALUNOS   */
+/* ================================= */
+
+.module-root {
+    -fx-background-color: #F3F4F6;
+    -fx-font-family: "Arial";
+}
+
+.module-header {
+    -fx-background-color: #1B1D1F;
+    -fx-padding: 18px 24px;
+}
+
+.module-brand {
+    -fx-text-fill: #F5C542;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.module-header-title {
+    -fx-text-fill: #F5F5F5;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.module-content {
+    -fx-padding: 24px;
+    -fx-background-color: #F3F4F6;
+}
+
+.module-scroll {
+    -fx-background-color: #F3F4F6;
+    -fx-background: #F3F4F6;
+}
+
+.module-scroll > .viewport {
+    -fx-background-color: #F3F4F6;
+}
+
+.module-card {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E0E3E7;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+}
+
+.module-section-title {
+    -fx-text-fill: #202326;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
+
+.module-field-label {
+    -fx-text-fill: #33383D;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.module-status {
+    -fx-text-fill: #737B84;
+    -fx-font-size: 12px;
+}
+
+.module-date-picker {
+    -fx-background-color: #F8F9FA;
+    -fx-border-color: #D9DDE1;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+}
+
+.module-date-picker .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: #202326;
+    -fx-prompt-text-fill: #8B929A;
+}
+
+/* ================================= */
+/* TABELA DE ALUNOS                  */
+/* ================================= */
+
+.student-table {
+    -fx-background-color: #FFFFFF;
+    -fx-control-inner-background: #FFFFFF;
+    -fx-table-cell-border-color: #E5E7EB;
+    -fx-table-header-border-color: #D1D5DB;
+    -fx-text-background-color: #202326;
+}
+
+.student-table .column-header-background {
+    -fx-background-color: #F1F3F5;
+}
+
+.student-table .column-header {
+    -fx-background-color: #F1F3F5;
+    -fx-size: 42px;
+}
+
+.student-table .column-header .label {
+    -fx-text-fill: #33383D;
+    -fx-font-weight: bold;
+}
+
+.student-table .table-cell {
+    -fx-text-fill: #202326;
+    -fx-padding: 10px;
+}
+
+.student-table .table-row-cell {
+    -fx-background-color: #FFFFFF;
+}
+
+.student-table .table-row-cell:odd {
+    -fx-background-color: #F8F9FA;
+}
+
+.student-table .table-row-cell:selected {
+    -fx-background-color: #F5C542;
+    -fx-text-background-color: #151719;
+}
+
+.student-table .table-row-cell:selected .table-cell {
+    -fx-text-fill: #151719;
+}
+
+/* Preenchimento depois da última coluna */
+
+.student-table .column-header-background .filler {
+    -fx-background-color: #F1F3F5;
+}
+
+.student-table .virtual-flow .corner {
+    -fx-background-color: #F1F3F5;
+}
+
+/* ================================= */
+/* BARRAS DE ROLAGEM                 */
+/* ================================= */
+
+.module-scroll .scroll-bar,
+.student-table .scroll-bar {
+    -fx-background-color: #F1F3F5;
+    -fx-background-radius: 0;
+}
+
+.module-scroll .scroll-bar .track,
+.student-table .scroll-bar .track {
+    -fx-background-color: #E5E7EB;
+    -fx-background-radius: 5px;
+}
+
+.module-scroll .scroll-bar .thumb,
+.student-table .scroll-bar .thumb {
+    -fx-background-color: #A1A1AA;
+    -fx-background-radius: 5px;
+}
+
+.module-scroll .scroll-bar .thumb:hover,
+.student-table .scroll-bar .thumb:hover {
+    -fx-background-color: #D4A91F;
+}
+
+.module-scroll .scroll-bar .increment-button,
+.module-scroll .scroll-bar .decrement-button,
+.student-table .scroll-bar .increment-button,
+.student-table .scroll-bar .decrement-button {
+    -fx-background-color: #F1F3F5;
+    -fx-background-radius: 0;
+}
+
+.module-scroll .scroll-bar .increment-arrow,
+.module-scroll .scroll-bar .decrement-arrow,
+.student-table .scroll-bar .increment-arrow,
+.student-table .scroll-bar .decrement-arrow {
+    -fx-background-color: #737B84;
+}

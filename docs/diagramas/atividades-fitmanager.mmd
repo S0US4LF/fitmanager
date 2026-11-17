@@ -1,0 +1,60 @@
+flowchart TD
+    A([Início]) --> B[Inicializar aplicação]
+    B --> C[Conectar ao banco SQLite]
+    C --> D[Verificar administrador inicial]
+    D --> E[Exibir tela de login]
+
+    E --> F[Informar usuário e senha]
+    F --> G{Campos preenchidos?}
+
+    G -- Não --> H[Exibir mensagem de atenção]
+    H --> E
+
+    G -- Sim --> I[Consultar usuário no banco]
+    I --> J{Usuário existe e está ativo?}
+
+    J -- Não --> K[Informar acesso negado]
+    K --> E
+
+    J -- Sim --> L[Verificar senha]
+    L --> M{Senha válida?}
+
+    M -- Não --> K
+    M -- Sim --> N[Identificar perfil do usuário]
+
+    N --> O[Exibir painel de controle]
+    O --> P{Ação escolhida}
+
+    P -- Gerenciar alunos --> Q[Verificar permissão]
+    Q --> R{Administrador ou atendente?}
+
+    R -- Não --> S[Negar acesso]
+    S --> O
+
+    R -- Sim --> T[Exibir tela de alunos]
+    T --> U{Operação escolhida}
+
+    U -- Cadastrar --> V[Preencher dados do aluno]
+    V --> W[Validar dados]
+    W --> X{Dados válidos?}
+    X -- Não --> Y[Exibir mensagem de erro]
+    Y --> T
+    X -- Sim --> Z[Salvar aluno no SQLite]
+    Z --> AA[Atualizar lista de alunos]
+    AA --> T
+
+    U -- Pesquisar --> AB[Informar nome ou CPF]
+    AB --> AC[Consultar alunos no SQLite]
+    AC --> T
+
+    U -- Excluir --> AD[Selecionar aluno]
+    AD --> AE[Solicitar confirmação]
+    AE --> AF{Confirmou exclusão?}
+    AF -- Não --> T
+    AF -- Sim --> AG[Excluir aluno do SQLite]
+    AG --> AA
+
+    U -- Voltar --> O
+    P -- Sair --> AH[Retornar à tela de login]
+    AH --> E
+    P -- Encerrar aplicação --> AI([Fim])

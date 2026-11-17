@@ -1,0 +1,146 @@
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane xmlns="http://javafx.com/javafx/21"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="br.com.fitmanager.controller.LoginController"
+          prefWidth="1000"
+          prefHeight="650"
+          styleClass="login-root">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="42"/>
+        <ColumnConstraints percentWidth="58"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="100"/>
+    </rowConstraints>
+
+    <!-- Identidade visual -->
+    <VBox GridPane.columnIndex="0"
+          GridPane.rowIndex="0"
+          alignment="CENTER"
+          spacing="20"
+          maxHeight="Infinity"
+          styleClass="login-brand">
+
+        <ImageView fitWidth="145"
+                   fitHeight="145"
+                   preserveRatio="true"
+                   smooth="true">
+            <image>
+                <Image url="@../images/logo.jpeg"/>
+            </image>
+        </ImageView>
+
+        <Label text="FITMANAGER"
+               styleClass="brand-title"/>
+
+        <Label text="SUA ACADEMIA,&#10;SUA EVOLUÇÃO."
+               styleClass="brand-message"
+               wrapText="true"/>
+
+    </VBox>
+
+    <!-- Formulário de login -->
+    <VBox GridPane.columnIndex="1"
+          GridPane.rowIndex="0"
+          alignment="CENTER"
+          spacing="24"
+          maxHeight="Infinity"
+          styleClass="login-form">
+
+        <HBox alignment="CENTER_RIGHT"
+              maxWidth="460"
+              prefWidth="460">
+
+            <Button fx:id="botaoTema"
+                    text="Modo escuro"
+                    onAction="#handleAlternarTema"
+                    styleClass="theme-button"/>
+
+        </HBox>
+
+        <VBox spacing="10"
+              maxWidth="460">
+
+            <Label text="Bem-vindo de volta!"
+                   styleClass="form-title"/>
+
+            <Label text="Entre com suas credenciais para continuar."
+                   styleClass="form-subtitle"
+                   wrapText="true"/>
+
+        </VBox>
+
+        <VBox spacing="10"
+              maxWidth="460">
+
+            <Label text="Usuário"
+                   styleClass="field-label"/>
+
+            <TextField fx:id="campoUsuario"
+                       promptText="Digite seu usuário"
+                       prefHeight="50"
+                       styleClass="login-input"/>
+
+            <Label text="Senha"
+                   styleClass="field-label"/>
+
+            <HBox spacing="8"
+                  alignment="CENTER_LEFT">
+
+                <StackPane HBox.hgrow="ALWAYS">
+
+                    <PasswordField fx:id="campoSenha"
+                                   promptText="Digite sua senha"
+                                   prefHeight="50"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                    <TextField fx:id="campoSenhaVisivel"
+                               promptText="Digite sua senha"
+                               prefHeight="50"
+                               maxWidth="Infinity"
+                               visible="false"
+                               managed="false"
+                               styleClass="login-input"/>
+
+                </StackPane>
+
+                <Button fx:id="botaoMostrarSenha"
+                        text="◉"
+                        onAction="#handleAlternarVisibilidadeSenha"
+                        prefWidth="48"
+                        prefHeight="50"
+                        styleClass="password-toggle-button"/>
+
+            </HBox>
+
+            <Button fx:id="botaoEntrar"
+                    text="ENTRAR"
+                    maxWidth="Infinity"
+                    prefHeight="52"
+                    onAction="#handleEntrar"
+                    styleClass="login-button"/>
+
+        </VBox>
+
+        <Label text="FitManager © 2026"
+               styleClass="footer-text"/>
+
+    </VBox>
+
+</GridPane>

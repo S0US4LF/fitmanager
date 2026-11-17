@@ -1,0 +1,237 @@
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="br.com.fitmanager.controller.AlunosController"
+            prefWidth="1200"
+            prefHeight="750"
+            styleClass="module-root">
+
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              spacing="15"
+              styleClass="module-header">
+
+            <Label text="FITMANAGER"
+                   styleClass="module-brand"/>
+
+            <Label text="GERENCIAMENTO DE ALUNOS"
+                   styleClass="module-header-title"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button fx:id="botaoTema"
+                    text="Modo escuro"
+                    onAction="#handleAlternarTema"
+                    styleClass="theme-button"/>
+
+            <Button fx:id="botaoVoltar"
+                    text="VOLTAR"
+                    onAction="#handleVoltar"
+                    styleClass="theme-button"/>
+
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true"
+                    fitToHeight="true"
+                    styleClass="module-scroll">
+
+            <VBox spacing="20"
+                  styleClass="module-content">
+
+                <HBox spacing="20"
+                      alignment="TOP_LEFT">
+
+                    <VBox fx:id="formularioCadastro"
+                          spacing="12"
+                          prefWidth="340"
+                          minWidth="300"
+                          maxWidth="360"
+                          styleClass="module-card">
+
+                        <Label text="Cadastrar novo aluno"
+                               styleClass="module-section-title"/>
+
+                        <Label text="Nome completo"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoNome"
+                                   promptText="Nome do aluno"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Label text="CPF"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoCpf"
+                                   promptText="000.000.000-00"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Label text="Data de nascimento"
+                               styleClass="module-field-label"/>
+
+                        <DatePicker fx:id="campoDataNascimento"
+                                    promptText="Selecione a data"
+                                    maxWidth="Infinity"
+                                    styleClass="module-date-picker"/>
+
+                        <Label text="Telefone"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoTelefone"
+                                   promptText="(00) 00000-0000"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Label text="E-mail"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoEmail"
+                                   promptText="exemplo@email.com"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Label text="Endereço"
+                               styleClass="module-section-title"/>
+
+                        <Label text="Rua"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoRua"
+                                   promptText="Nome da rua"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Label text="Número"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoNumero"
+                                   promptText="Número da residência"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Label text="Bairro"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoBairro"
+                                   promptText="Nome do bairro"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Label text="CEP"
+                               styleClass="module-field-label"/>
+
+                        <TextField fx:id="campoCep"
+                                   promptText="00000-000"
+                                   maxWidth="Infinity"
+                                   styleClass="login-input"/>
+
+                        <Button text="CADASTRAR ALUNO"
+                                maxWidth="Infinity"
+                                prefHeight="48"
+                                onAction="#handleCadastrar"
+                                styleClass="login-button"/>
+
+                    </VBox>
+
+                    <VBox spacing="15"
+                          minWidth="0"
+                          HBox.hgrow="ALWAYS"
+                          styleClass="module-card">
+
+                        <Label text="Alunos cadastrados"
+                               styleClass="module-section-title"/>
+
+                        <HBox spacing="10"
+                              alignment="CENTER_LEFT">
+
+                            <TextField fx:id="campoPesquisa"
+                                       promptText="Pesquisar por nome ou CPF"
+                                       onAction="#handlePesquisar"
+                                       HBox.hgrow="ALWAYS"
+                                       styleClass="login-input"/>
+
+                            <Button text="PESQUISAR"
+                                    prefHeight="42"
+                                    onAction="#handlePesquisar"
+                                    styleClass="login-button"/>
+
+                            <Button text="LIMPAR"
+                                    prefHeight="42"
+                                    onAction="#handleLimparPesquisa"
+                                    styleClass="theme-button"/>
+
+                        </HBox>
+
+                        <HBox alignment="CENTER_RIGHT">
+
+                            <Button text="EXCLUIR ALUNO SELECIONADO"
+                                    prefHeight="42"
+                                    onAction="#handleExcluir"
+                                    styleClass="theme-button"/>
+
+                        </HBox>
+
+                        <TableView fx:id="tabelaAlunos"
+                                   prefHeight="500"
+                                   minWidth="0"
+                                   VBox.vgrow="ALWAYS"
+                                   styleClass="student-table">
+
+                            <columns>
+
+                                <TableColumn fx:id="colunaNome"
+                                             text="Nome"
+                                             prefWidth="130"/>
+
+                                <TableColumn fx:id="colunaCpf"
+                                             text="CPF"
+                                             prefWidth="100"/>
+
+                                <TableColumn fx:id="colunaNascimento"
+                                             text="Nascimento"
+                                             prefWidth="95"/>
+
+                                <TableColumn fx:id="colunaTelefone"
+                                             text="Telefone"
+                                             prefWidth="120"/>
+
+                                <TableColumn fx:id="colunaEmail"
+                                             text="E-mail"
+                                             prefWidth="145"/>
+
+                                <TableColumn fx:id="colunaEndereco"
+                                             text="Endereço"
+                                             prefWidth="220"/>
+
+                            </columns>
+                        </TableView>
+
+                        <Label fx:id="mensagemStatus"
+                               text="Carregando alunos..."
+                               styleClass="module-status"/>
+
+                    </VBox>
+
+                </HBox>
+
+            </VBox>
+
+        </ScrollPane>
+    </center>
+
+</BorderPane>

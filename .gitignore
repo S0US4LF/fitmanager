@@ -4,3 +4,8 @@ out/
 *.log
 .idea/
 .vscode/
+# Banco de dados local
+fitmanager.db
+
+# Arquivos do Windows
+desktop.ini

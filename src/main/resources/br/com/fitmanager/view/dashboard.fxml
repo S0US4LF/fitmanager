@@ -1,0 +1,155 @@
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane xmlns="http://javafx.com/javafx/21"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="br.com.fitmanager.controller.DashboardController"
+          prefWidth="1000"
+          prefHeight="650"
+          styleClass="login-root">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="28"/>
+        <ColumnConstraints percentWidth="72"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints percentHeight="100"/>
+    </rowConstraints>
+
+    <!-- Identidade visual -->
+    <VBox GridPane.columnIndex="0"
+          GridPane.rowIndex="0"
+          alignment="CENTER"
+          spacing="22"
+          maxHeight="Infinity"
+          styleClass="login-brand">
+
+        <ImageView fitWidth="125"
+                   fitHeight="125"
+                   preserveRatio="true"
+                   smooth="true">
+            <image>
+                <Image url="@../images/logo.jpeg"/>
+            </image>
+        </ImageView>
+
+        <Label text="FITMANAGER"
+               styleClass="brand-title"
+               alignment="CENTER"
+               maxWidth="Infinity"/>
+
+        <VBox alignment="CENTER"
+              spacing="8"
+              maxWidth="Infinity">
+
+            <Label text="PAINEL DE CONTROLE"
+                   styleClass="brand-message"
+                   wrapText="true"
+                   textAlignment="CENTER"
+                   alignment="CENTER"
+                   maxWidth="Infinity"/>
+
+            <Label text="Sua academia, sua evolução."
+                   styleClass="brand-description"
+                   wrapText="true"
+                   textAlignment="CENTER"
+                   alignment="CENTER"
+                   maxWidth="Infinity"/>
+
+        </VBox>
+    </VBox>
+
+    <!-- Área principal -->
+    <BorderPane GridPane.columnIndex="1"
+                GridPane.rowIndex="0"
+                styleClass="login-form">
+
+        <top>
+            <HBox alignment="CENTER_RIGHT">
+                <Button fx:id="botaoTema"
+                        text="Modo escuro"
+                        onAction="#handleAlternarTema"
+                        styleClass="theme-button"/>
+            </HBox>
+        </top>
+
+        <center>
+            <VBox alignment="CENTER"
+                  spacing="32"
+                  maxWidth="700">
+
+                <VBox alignment="CENTER"
+                      spacing="14"
+                      maxWidth="700">
+
+                    <Label fx:id="tituloPainel"
+                           text="Painel do Administrador"
+                           styleClass="form-title"
+                           wrapText="true"
+                           textAlignment="CENTER"
+                           alignment="CENTER"/>
+
+                    <Label fx:id="mensagemBoasVindas"
+                           text="Bem-vindo ao FitManager!"
+                           styleClass="form-subtitle"
+                           wrapText="true"
+                           textAlignment="CENTER"
+                           alignment="CENTER"/>
+                </VBox>
+
+                <VBox alignment="CENTER"
+                      spacing="16"
+                      maxWidth="600">
+
+                    <Label text="Acesso autorizado"
+                           styleClass="field-label"/>
+
+                    <Label fx:id="perfilUsuario"
+                           text="Perfil de acesso"
+                           styleClass="form-subtitle"
+                           textAlignment="CENTER"/>
+
+                    <Label text="Os módulos de gerenciamento serão disponibilizados aqui conforme o desenvolvimento do sistema."
+                           wrapText="true"
+                           styleClass="form-subtitle"
+                           textAlignment="CENTER"/>
+
+                    <Button fx:id="botaoAlunos"
+                            text="CONSULTAR ALUNOS"
+                            prefWidth="260"
+                            maxWidth="260"
+                            prefHeight="56"
+                            onAction="#handleAbrirAlunos"
+                            styleClass="login-button"/>
+
+                    <Button fx:id="botaoSair"
+                            text="SAIR DO SISTEMA"
+                            prefWidth="260"
+                            maxWidth="260"
+                            prefHeight="56"
+                            onAction="#handleSair"
+                            styleClass="theme-button"/>
+                </VBox>
+            </VBox>
+        </center>
+
+        <bottom>
+            <HBox alignment="CENTER">
+                <Label text="FitManager © 2026"
+                       styleClass="footer-text"/>
+            </HBox>
+        </bottom>
+
+    </BorderPane>
+
+</GridPane>

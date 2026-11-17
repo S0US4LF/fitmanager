@@ -1,0 +1,115 @@
+classDiagram
+direction TB
+
+class App {
+    +start(Stage stage)
+    +main(String[] args)
+}
+
+class Usuario {
+    -int id
+    -String nome
+    -String usuario
+    -String perfil
+    +getId()
+    +getNome()
+    +getUsuario()
+    +getPerfil()
+}
+
+class Aluno {
+    -int id
+    -String nome
+    -String cpf
+    -String dataNascimento
+    -String telefone
+    -String email
+    -String endereco
+    +getId()
+    +getNome()
+    +getCpf()
+    +getDataNascimento()
+    +getTelefone()
+    +getEmail()
+    +getEndereco()
+}
+
+class LoginController {
+    +handleEntrar()
+    +handleAlternarTema()
+    -abrirPainel(Usuario)
+    -mostrarAlerta()
+}
+
+class DashboardController {
+    -Usuario usuarioAtual
+    +setUsuario(Usuario)
+    +handleAbrirAlunos()
+    +handleSair()
+    +handleAlternarTema()
+}
+
+class AlunosController {
+    -Usuario usuarioAtual
+    +setUsuario(Usuario)
+    +handleCadastrar()
+    +handleExcluir()
+    +handlePesquisar()
+    +handleLimparPesquisa()
+    +handleVoltar()
+    +handleAlternarTema()
+}
+
+class UsuarioDAO {
+    +criarAdministradorInicial()
+    +autenticar(String, String) Usuario
+}
+
+class AlunoDAO {
+    +cadastrar(Aluno)
+    +consultar(String, String) List
+    +excluir(int) boolean
+}
+
+class AlunoService {
+    +cadastrar(Usuario, Aluno)
+    +consultar(Usuario, String) List
+    +excluir(Usuario, Aluno) boolean
+}
+
+class Database {
+    -String URL
+    +getConnection() Connection
+    +initializeDatabase()
+}
+
+class PasswordUtil {
+    +gerarSalt() String
+    +gerarHash(String, String) String
+    +verificarSenha(String, String, String) boolean
+}
+
+class ThemeManager {
+    +isDarkMode() boolean
+    +setDarkMode(boolean)
+    +applyTheme(Scene, boolean)
+}
+
+App --> Database : inicializa
+App --> ThemeManager : aplica tema
+LoginController --> UsuarioDAO : autentica
+LoginController --> Usuario : recebe
+LoginController --> DashboardController : abre painel
+DashboardController --> AlunosController : abre alunos
+DashboardController --> Usuario : utiliza
+AlunosController --> AlunoService : solicita operações
+AlunosController --> Usuario : utiliza
+AlunoService --> AlunoDAO : acessa dados
+AlunoService --> Aluno : valida
+AlunoDAO --> Aluno : persiste
+UsuarioDAO --> Database : conexão
+AlunoDAO --> Database : conexão
+UsuarioDAO --> PasswordUtil : protege senhas
+LoginController --> ThemeManager : alterna tema
+DashboardController --> ThemeManager : alterna tema
+AlunosController --> ThemeManager : alterna tema

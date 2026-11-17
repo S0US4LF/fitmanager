@@ -1,0 +1,33 @@
+flowchart TB
+
+    subgraph APRESENTACAO["Camada de apresentação"]
+        VIEW["view<br/>login.fxml<br/>dashboard.fxml<br/>alunos.fxml"]
+        CSS["css<br/>styles.css<br/>dark-styles.css"]
+        CTRL["controller<br/>App controllers"]
+    end
+
+    subgraph NEGOCIO["Camada de negócio"]
+        SERVICE["service<br/>AlunoService"]
+        MODEL["model<br/>Aluno<br/>Usuario"]
+    end
+
+    subgraph DADOS["Camada de persistência"]
+        DAO["dao<br/>AlunoDAO<br/>UsuarioDAO"]
+        DB["database<br/>Database"]
+    end
+
+    subgraph SUPORTE["Camada de suporte"]
+        UTIL["util<br/>PasswordUtil<br/>ThemeManager"]
+    end
+
+    CTRL --> VIEW
+    VIEW --> CSS
+    CTRL --> SERVICE
+    CTRL --> MODEL
+    SERVICE --> MODEL
+    SERVICE --> DAO
+    DAO --> MODEL
+    DAO --> DB
+    CTRL --> UTIL
+    DB --> DAO
+    UTIL --> CTRL
